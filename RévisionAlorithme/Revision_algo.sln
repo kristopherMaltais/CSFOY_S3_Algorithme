@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Revision_algo", "Revision_algo\Revision_algo.csproj", "{097F2419-868D-4155-B5FE-74D34883AEBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testsUnitaires", "testsUnitaires\testsUnitaires.csproj", "{321F6F3F-5943-4995-8798-93D542367299}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{097F2419-868D-4155-B5FE-74D34883AEBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{097F2419-868D-4155-B5FE-74D34883AEBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{097F2419-868D-4155-B5FE-74D34883AEBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{097F2419-868D-4155-B5FE-74D34883AEBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{321F6F3F-5943-4995-8798-93D542367299}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{321F6F3F-5943-4995-8798-93D542367299}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{321F6F3F-5943-4995-8798-93D542367299}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{321F6F3F-5943-4995-8798-93D542367299}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7F70F2D4-C412-47B9-AC11-B117094A361B}
+	EndGlobalSection
+EndGlobal
