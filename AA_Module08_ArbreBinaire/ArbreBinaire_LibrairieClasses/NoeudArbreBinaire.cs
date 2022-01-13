@@ -14,11 +14,10 @@ namespace ArbreBinaire_LibrairieClasses
         // ** Constructeurs ** //
         public NoeudArbreBinaire(TypeElement p_valeur, NoeudArbreBinaire<TypeElement> p_noeudGauche = null, NoeudArbreBinaire<TypeElement> p_noeudDroite = null)
         {
-            ValeurNoeud = p_valeur;
-            NoeudGauche = p_noeudGauche;
-            NoeudDroite = p_noeudDroite;
+            this.ValeurNoeud = p_valeur;
+            this.NoeudGauche = p_noeudGauche;
+            this.NoeudDroite = p_noeudDroite;
         }
-
         internal int CompareTo<TypeElement>(NoeudArbreBinaire<TypeElement> p_noeudCourant) where TypeElement : IComparable<TypeElement>
         {
             throw new NotImplementedException();

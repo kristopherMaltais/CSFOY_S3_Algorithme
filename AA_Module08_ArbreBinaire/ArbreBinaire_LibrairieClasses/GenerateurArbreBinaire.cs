@@ -22,7 +22,6 @@ namespace ArbreBinaire_LibrairieClasses
 
             return arbreBinaire;
         }
-
         public static ArbreBinaireRecherche<int> ExempleArbre2()
         {
 

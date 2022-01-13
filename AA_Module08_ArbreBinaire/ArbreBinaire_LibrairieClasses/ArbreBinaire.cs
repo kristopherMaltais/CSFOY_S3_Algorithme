@@ -17,7 +17,7 @@ namespace ArbreBinaire_LibrairieClasses
         // ** Constructeurs ** //
         public ArbreBinaire(NoeudArbreBinaire<TypeElement> p_noeudRacine)
         {
-            NoeudRacine = p_noeudRacine;
+            this.NoeudRacine. = p_noeudRacine;
         }
 
         // ** Méthodes ** //
@@ -31,10 +31,10 @@ namespace ArbreBinaire_LibrairieClasses
             return 1 + Math.Max(Hauteur_rec(p_noeud.NoeudGauche), Hauteur_rec(p_noeud.NoeudDroite));
         }
 
-        // Parcours Prefixe
+            // Parcours Prefixe
         public void ParcoursPrefixe(Action<TypeElement> p_traitement)
         {
-            ParcoursPrefixe_rec(NoeudRacine, p_traitement);
+            ParcoursPrefixe_rec(this.NoeudRacine, p_traitement);
         }
         private void ParcoursPrefixe_rec(NoeudArbreBinaire<TypeElement> p_noeud, Action<TypeElement> p_traitement)
         {
@@ -46,10 +46,10 @@ namespace ArbreBinaire_LibrairieClasses
             }
         }
 
-        // Parcours Infixe
+            // Parcours Infixe
         public void ParcoursInfixe(Action<TypeElement> p_traitement)
         {
-            ParcoursInfixe_rec(NoeudRacine, p_traitement);
+            ParcoursInfixe_rec(this.NoeudRacine, p_traitement);
         }
         private void ParcoursInfixe_rec(NoeudArbreBinaire<TypeElement> p_noeud, Action<TypeElement> p_traitement)
         {
@@ -61,10 +61,10 @@ namespace ArbreBinaire_LibrairieClasses
             }
         }
 
-        // Parcours Infixe
+            // Parcours Infixe
         public void ParcoursPostfixe(Action<TypeElement> p_traitement)
         {
-            ParcoursPostfixe_rec(NoeudRacine, p_traitement);
+            ParcoursPostfixe_rec(this.NoeudRacine, p_traitement);
         }
         private void ParcoursPostfixe_rec(NoeudArbreBinaire<TypeElement> p_noeud, Action<TypeElement> p_traitement)
         {

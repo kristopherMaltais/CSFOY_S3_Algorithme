@@ -18,10 +18,11 @@ namespace ArbreBinaire_LibrairieClasses
         // ** Constructeurs ** //
         public ArbreBinaireRecherche(NoeudArbreBinaire<TypeElement> p_noeudRacine = null)
         {
-            NoeudRacine = p_noeudRacine;
+            this.NoeudRacine = p_noeudRacine;
         }
 
         // ** Méthodes ** //
+            // Minimum
         public TypeElement Minimum()
         {
             return Minimum_rec(this.NoeudRacine);
@@ -36,6 +37,7 @@ namespace ArbreBinaire_LibrairieClasses
             return Minimum_rec(p_noeud.NoeudGauche);
         }
 
+            // Maximum
         public TypeElement Maximum()
         {
             return Maximum_rec(this.NoeudRacine);
@@ -50,21 +52,16 @@ namespace ArbreBinaire_LibrairieClasses
             return Maximum_rec(p_noeud.NoeudDroite);
         }
 
+            // AjouterNoeud
         public void AjouterNoeud(TypeElement p_valeurAAjouter)
         {
             // Précondition
             if(p_valeurAAjouter is null)
             {
-                throw new ArgumentNullException(nameof(p_valeurAAjouter), "Le noeud ne peut pas être null");
-            }
-
-            if(NoeudRacine is null)
-            {
-
+                throw new ArgumentNullException(nameof(p_valeurAAjouter), "La valeur passé en paramètre ne peut pas être null");
             }
 
             NoeudArbreBinaire<TypeElement> nouveauNoeud = new NoeudArbreBinaire<TypeElement>(p_valeurAAjouter);
-
             if (NoeudRacine is null)
             {
                 this.NoeudRacine = nouveauNoeud;
@@ -100,19 +97,19 @@ namespace ArbreBinaire_LibrairieClasses
             }
         }
 
-
+            // RechercherValeur
         public bool RechercherValeur(TypeElement p_valeurAChercher)
         {
-            if(NoeudRacine is null)
+            if(this.NoeudRacine is null)
             {
-                throw new ArgumentNullException("Ne peut pas chercher une valeur sur un arbre null");
+                return false;
             }
 
             return RechercherValeur_rec(p_valeurAChercher, this.NoeudRacine);
         }
         private bool RechercherValeur_rec(TypeElement p_valeurAChercher, NoeudArbreBinaire<TypeElement> p_noeudCourant)
         {
-            NoeudArbreBinaire<TypeElement> noeudSuivant = p_valeurAChercher.CompareTo(p_noeudCourant.ValeurNoeud) <= 0 ? p_noeudCourant.NoeudGauche : p_noeudCourant.NoeudDroite;
+            NoeudArbreBinaire<TypeElement> noeudSuivant = p_valeurAChercher.CompareTo(p_noeudCourant.ValeurNoeud) < 0 ? p_noeudCourant.NoeudGauche : p_noeudCourant.NoeudDroite;
 
             if (p_valeurAChercher.CompareTo(p_noeudCourant.ValeurNoeud) == 0)
             {
