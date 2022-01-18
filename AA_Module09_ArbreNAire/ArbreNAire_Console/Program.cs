@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AbreNAire_LibrairieClasses;
+using System;
+using System.Collections.Generic;
 
 namespace ArbreNAire_Console
 {
@@ -6,7 +8,20 @@ namespace ArbreNAire_Console
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            ArbreAutoCompletion arbre = new ArbreAutoCompletion();
+
+            arbre.AjouterMot("na");
+            arbre.AjouterMot("nslle");
+            arbre.AjouterMot("nalles");
+            arbre.AjouterMot("nallesdsadqw");
+            arbre.AjouterMot("bus");
+
+            List<string> liste = arbre.CompleterPrefixe("na");
+
+            foreach (string mot in liste)
+            {
+                Console.WriteLine(mot);
+            }
         }
     }
 }
