@@ -35,6 +35,7 @@ namespace AbreNAire_LibrairieClasses
         private void AjouterMot_rec(DonneeNoeudTrie p_noeudCourant, string p_motAVerifier)
         {
             int indexNoeudEnfant = p_noeudCourant.NoeudsEnfants.FindIndex(noeud => noeud.Lettre == p_motAVerifier[0]);
+
             if (p_motAVerifier.Length > 0)
             {
                 if (indexNoeudEnfant == -1)

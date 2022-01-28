@@ -8,20 +8,9 @@ namespace ArbreNAire_Console
     {
         static void Main(string[] args)
         {
-            ArbreAutoCompletion arbre = new ArbreAutoCompletion();
+            ArbreExpression arbre =GenerateurArbreExpression.ExempleExpression1();
 
-            arbre.AjouterMot("na");
-            arbre.AjouterMot("nslle");
-            arbre.AjouterMot("nalles");
-            arbre.AjouterMot("nallesdsadqw");
-            arbre.AjouterMot("bus");
-
-            List<string> liste = arbre.CompleterPrefixe("na");
-
-            foreach (string mot in liste)
-            {
-                Console.WriteLine(mot);
-            }
+            Console.WriteLine(arbre.NoeudRacine.Calculer().ToString());
         }
     }
 }

@@ -17,7 +17,7 @@ namespace ArbreBinaire_LibrairieClasses
         // ** Constructeurs ** //
         public ArbreBinaire(NoeudArbreBinaire<TypeElement> p_noeudRacine)
         {
-            this.NoeudRacine. = p_noeudRacine;
+            this.NoeudRacine = p_noeudRacine;
         }
 
         // ** Méthodes ** //
@@ -75,5 +75,58 @@ namespace ArbreBinaire_LibrairieClasses
                 p_traitement(p_noeud.ValeurNoeud);
             }
         }
+
+            // Parcours Largeur Non récursif QUEUE
+        public void ParcoursLargeur()
+        {
+            Queue<NoeudArbreBinaire<TypeElement>> file = new Queue<NoeudArbreBinaire<TypeElement>>();
+           
+            file.Enqueue(this.NoeudRacine);
+
+            while(file.Count != 0)
+            {
+                if(file.Peek().NoeudGauche is not null)
+                {
+                    file.Enqueue(file.Peek().NoeudGauche);
+                }
+
+                if(file.Peek().NoeudDroite is not null)
+                {
+                    file.Enqueue(file.Peek().NoeudDroite);
+                }
+
+                Console.WriteLine(file.Dequeue().ValeurNoeud.ToString());
+            }
+        }
+
+            // Parcours Profondeur Non récursif STACK
+        public void ParcoursProfondeur()
+        {
+            Stack<NoeudArbreBinaire<TypeElement>> pile = new Stack<NoeudArbreBinaire<TypeElement>>();
+            pile.Push(this.NoeudRacine);
+            NoeudArbreBinaire<TypeElement> noeudCourant = pile.Peek();
+         
+
+            while (pile.Count > 0)
+            {
+                noeudCourant = pile.Pop();
+                Console.WriteLine(noeudCourant.ValeurNoeud.ToString());
+                if (noeudCourant.NoeudDroite is not null)
+                {
+                    pile.Push(noeudCourant.NoeudDroite);
+                }
+
+                if(pile.Peek().NoeudGauche is not null)
+                {
+                    pile.Push(pile.Peek().NoeudGauche);
+                }
+            }
+
+            
+        }
+
+        
+        
+
     }
 }
