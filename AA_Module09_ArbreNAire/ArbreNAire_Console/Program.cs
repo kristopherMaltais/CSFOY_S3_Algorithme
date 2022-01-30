@@ -8,9 +8,22 @@ namespace ArbreNAire_Console
     {
         static void Main(string[] args)
         {
-            ArbreExpression arbre =GenerateurArbreExpression.ExempleExpression1();
+            ArbreAutoCompletion arbre = new ArbreAutoCompletion();
+            arbre.AjouterMot("ami");
+            arbre.AjouterMot("amicale");
+            arbre.AjouterMot("amicalement");
+            arbre.AjouterMot("amour");
+            arbre.AjouterMot("crier");
+            arbre.AjouterMot("critere");
+            arbre.AjouterMot("cribler");
+            arbre.AjouterMot("carton");
+            arbre.AjouterMot("canton");
 
-            Console.WriteLine(arbre.NoeudRacine.Calculer().ToString());
+            List<string> listeMot = arbre.CompleterPrefixe("am");
+
+            listeMot.ForEach(mot => Console.WriteLine(mot));
+
+
         }
     }
 }

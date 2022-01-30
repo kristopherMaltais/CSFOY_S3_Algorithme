@@ -6,18 +6,17 @@ using System.Threading.Tasks;
 
 namespace AbreNAire_LibrairieClasses
 {
-    class NoeudOperateur<TypeElement> : INoeudExpression<TypeElement>
-    where TypeElement : 
+    class NoeudOperateur : INoeudExpression
     {
         // ** Champs ** //
 
         // ** Propriétés ** //
         public string Operateur { get; private set; }
-        public INoeudExpression<TypeElement> NoeudGauche { get; private set; }
-        public INoeudExpression<TypeElement> NoeudDroite { get; private set; }
+        public INoeudExpression NoeudGauche { get; private set; }
+        public INoeudExpression NoeudDroite { get; private set; }
 
         // ** Constructeurs ** //
-        public NoeudOperateur(string p_operateur, INoeudExpression<TypeElement> p_noeudGauche, INoeudExpression<TypeElement> p_noeudDroite)
+        public NoeudOperateur(string p_operateur, INoeudExpression p_noeudGauche, INoeudExpression p_noeudDroite)
         {
             this.Operateur = p_operateur;
             this.NoeudGauche = p_noeudGauche;
@@ -25,7 +24,7 @@ namespace AbreNAire_LibrairieClasses
         }
 
         // ** Méthodes ** //
-        public TypeElement Calculer()
+        public int Calculer()
         {
             switch (this.Operateur)
             {

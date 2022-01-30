@@ -59,7 +59,7 @@ namespace AbreNAire_LibrairieClasses
             List<String> motsValides = new List<string>();
             DonneeNoeudTrie noeudPrefixe = TrouverNoeud(NoeudRacine, p_prefixe);
             
-                return CollecterMots(noeudPrefixe, motsValides);
+            return CollecterMots(noeudPrefixe, motsValides);
 
         }
         private DonneeNoeudTrie? TrouverNoeud(DonneeNoeudTrie p_noeudCourant, string p_prefixe)
