@@ -8,6 +8,15 @@ namespace Revision_algo
     {
         static void Main(string[] args)
         {
+            int[] valeurs = new int[] { 4, 3, 6, 1 };
+            int[] resultat = TriRapide<int>(valeurs);
+
+            foreach(int element in resultat)
+            {
+                Console.WriteLine(element);
+            }
+
+
         }
 
         // Exercice 1
