@@ -6,31 +6,38 @@ using System.Threading.Tasks;
 
 namespace AbreNAire_LibrairieClasses
 {
-    class NoeudEntier<TypeElement> : INoeudExpression<TypeElement>
+    class NoeudEntier : INoeudExpression
     {
         // ** Champs ** //
+        private int m_valeur;
 
         // ** Propriétés ** //
-        public TypeElement Valeur { get; set; }
-        public INoeudExpression<TypeElement> NoeudGauche { get; private set; }
-        public INoeudExpression<TypeElement> NoeudDroite { get; private set; }
+        public string ValeurNoeud
+        {
+            get => m_valeur.ToString();
+            set
+            {
+                m_valeur = int.Parse(value);
+            }
+        }
+        public INoeudExpression NoeudGauche { get; set; }
+        public INoeudExpression NoeudDroite { get; set; }
+
         // ** Constructeurs ** //
-        public NoeudEntier(TypeElement p_valeur)
+        public NoeudEntier()
         {
-            this.Valeur = p_valeur;
+            this.NoeudGauche = null;
+            this.NoeudDroite = null;
         }
-
-        public TypeElement Calculer()
+        public NoeudEntier(int p_valeur)
         {
-            return this.Valeur;
-        }
-
-        public bool EstNoeudOperateur()
-        {
-            return false;
+            this.m_valeur = p_valeur;
         }
 
         // ** Méthodes ** //
-
+        public int Calculer()
+        {
+            return this.m_valeur;
+        }
     }
 }

@@ -8,9 +8,9 @@ namespace AbreNAire_LibrairieClasses
 {
     public interface INoeudExpression
     {
-        public INoeudExpression NoeudGauche { get; }
-        public INoeudExpression NoeudDroite { get; }
-        public bool EstNoeudOperateur();
+        public INoeudExpression NoeudGauche { get; set; }
+        public INoeudExpression NoeudDroite { get; set; }
+        public string ValeurNoeud { get; set; }
         public int Calculer();
     }
 }

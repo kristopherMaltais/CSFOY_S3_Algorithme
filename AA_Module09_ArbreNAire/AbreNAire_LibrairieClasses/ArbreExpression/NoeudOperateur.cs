@@ -9,16 +9,28 @@ namespace AbreNAire_LibrairieClasses
     class NoeudOperateur : INoeudExpression
     {
         // ** Champs ** //
+        private char m_operateur;
 
         // ** Propriétés ** //
-        public string Operateur { get; private set; }
-        public INoeudExpression NoeudGauche { get; private set; }
-        public INoeudExpression NoeudDroite { get; private set; }
+        public INoeudExpression NoeudGauche { get; set; }
+        public INoeudExpression NoeudDroite { get; set; }
+        public string ValeurNoeud
+        {
+            get => this.m_operateur.ToString();
+            set
+            {
+                this.m_operateur = Char.Parse(value);
+            }
+        }
 
         // ** Constructeurs ** //
-        public NoeudOperateur(string p_operateur, INoeudExpression p_noeudGauche, INoeudExpression p_noeudDroite)
+        public NoeudOperateur()
         {
-            this.Operateur = p_operateur;
+            this.m_operateur = ' ';
+        }
+        public NoeudOperateur(char p_operateur, INoeudExpression p_noeudGauche, INoeudExpression p_noeudDroite)
+        {
+            this.m_operateur = p_operateur;
             this.NoeudGauche = p_noeudGauche;
             this.NoeudDroite = p_noeudDroite;
         }
@@ -26,25 +38,20 @@ namespace AbreNAire_LibrairieClasses
         // ** Méthodes ** //
         public int Calculer()
         {
-            switch (this.Operateur)
+            switch (this.m_operateur)
             {
-                case "+":
+                case '+':
                     return NoeudGauche.Calculer() + NoeudDroite.Calculer();
-                case "-":
+                case '-':
                     return NoeudGauche.Calculer() - NoeudDroite.Calculer();
-                case "*":
+                case '*':
                     return NoeudGauche.Calculer() * NoeudDroite.Calculer();
-                case "/":
+                case '/':
                     return NoeudGauche.Calculer() / NoeudDroite.Calculer();
                 default:
                     return default;
             }
 
-        }
-
-        public bool EstNoeudOperateur()
-        {
-            return true;
         }
     }
 }

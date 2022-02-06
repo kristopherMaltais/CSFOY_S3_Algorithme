@@ -20,6 +20,9 @@ namespace AbreNAire_LibrairieClasses
         }
 
         // ** Méthodes ** //
-       
+        public int Calculer()
+        {
+            return this.NoeudRacine.Calculer();
+        }
     }
 }
