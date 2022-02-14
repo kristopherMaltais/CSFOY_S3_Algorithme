@@ -22,6 +22,20 @@ namespace ArbreBinaire_LibrairieClasses
 
             return arbreBinaire;
         }
+        public static ArbreBinaire<int> ExempleArbre3()
+        {
+            NoeudArbreBinaire<int> noeud1 = new NoeudArbreBinaire<int>(1);
+            NoeudArbreBinaire<int> noeud2 = new NoeudArbreBinaire<int>(3);
+            NoeudArbreBinaire<int> noeud3 = new NoeudArbreBinaire<int>(6);
+            NoeudArbreBinaire<int> noeud4 = new NoeudArbreBinaire<int>(2, noeud1, noeud2);
+            NoeudArbreBinaire<int> noeud5 = new NoeudArbreBinaire<int>(5, null, noeud3);
+            NoeudArbreBinaire<int> noeud6 = new NoeudArbreBinaire<int>(4, noeud4, noeud5);
+
+            ArbreBinaire<int> arbreBinaire = new ArbreBinaire<int>(noeud6);
+
+            return arbreBinaire;
+
+        }
         public static ArbreBinaireRecherche<int> ExempleArbre2()
         {
 

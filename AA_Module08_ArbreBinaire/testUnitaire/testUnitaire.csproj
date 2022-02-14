@@ -19,8 +19,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\ArbreBinaire_LibrairieClasses\ArbreBinaire_LibrairieClasses.csproj" />
-  </ItemGroup>
-
 </Project>

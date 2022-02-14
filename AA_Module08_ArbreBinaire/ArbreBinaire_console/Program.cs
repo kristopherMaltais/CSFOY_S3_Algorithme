@@ -7,9 +7,12 @@ namespace ArbreBinaire_console
     {
         static void Main(string[] args)
         {
-            ArbreBinaire<int> test = GenerateurArbreBinaire.ExempleArbre1();
+            // Arrange
+            ArbreBinaire<int> arbre1 = GenerateurArbreBinaire.ExempleArbre1();
 
-            test.ParcoursLargeur();
+            // Act
+            arbre1.ParcoursProfondeur();
+            
         }
     }
 }
